@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Témazáró</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        h2 {
+            background: grey;
+            color: white;
+            padding: 5px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        #list>li {
+            margin-top: 10px;
+            cursor: pointer;
+            width: 200px;
+        }
+        .details {
+            display: none;
+            
+        }
+    </style>
+</head>
+<body class="p-5">
+    <h1 class="mb-5">JS témazáró feladatok</h1>
+    <h2>1. feladat</h2>
+    <h3>Számot tartalmazó tömb elemek visszaadása tömbként</h3>
+    <pre>
+        const input = ['apple', 'banana 66', 'cherry 10', '3', '42', '7']
+        const pattern = /\d/
+        const output = input.filter( e => pattern.test(e))
+        console.log(output)
+    </pre>
+    <p>vagy</p>
+    <pre class="mb-5">
+        const input = ['apple', 'banana 66', 'cherry 10', '3', '42', '7']
+        const pattern = /\d/
+        function convertToDigits(arr) {
+            const arrModified = arr.filter( e => pattern.test(e))
+            return arrModified
+        }
+        const output2 = convertToDigits(input)
+        console.log(output2)
+    </pre>
+
+    <h2>2. feladat, 1. változat</h2>
+    <h3>Ország kereső</h3>
+    <label for="contryName">Ország:</label>
+    <input type="text" id="contryName">
+    <button>Keresés</button>
+    <ul id="list" class="mb-5"></ul>
+
+    <h2>2. feladat, 2. változat</h2>
+    <h3>Ország kereső</h3>
+    <label for="contryName2">Ország:</label>
+    <input type="text" id="contryName2">
+    <ul id="list2"></ul>
+
+    <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="itemModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-body-img mb-5"><img src="" alt="" width="100%" style="display: block; margin: 0 auto;"></div>
+              <h6>Főváros:</h6>
+              <p class="modal-body-capital"></p>
+              <h6>Népesség:</h6>
+              <p class="modal-body-population"> </p>
+              <h6>Terület:</h6>
+              <p class="modal-body-area"> </p>
+                
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <script src="JS_temazaro.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
